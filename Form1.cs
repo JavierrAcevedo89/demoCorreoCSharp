@@ -40,6 +40,7 @@ namespace demoCorreo
             string asunto = txtBoxAsunto1.Text;
             string mensaje = txtBoxMensaje1.Text;
             string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
+            string[] enlacesCortos = {"bit.ly","tiny.url","ow.ly","goo.gl"};
 
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
@@ -53,20 +54,29 @@ namespace demoCorreo
             {
                 if (comprobarSpam())
                 {
+                    if (comprobarEnlaceCortado())
+                    {
+                        MessageBox.Show("El mensaje contiene un enlace acortado, se recomienda evitar o revisar detenidamente su confiabilidad.");
+                    }
                     listBoxSPAM2.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                     txtBoxRemitente1.Clear();
                     txtBoxDestinatario1.Clear();
                     txtBoxAsunto1.Clear();
                     txtBoxMensaje1.Clear();
+                    listBoxEnviados1.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                 } else
                 {
+                    if (comprobarEnlaceCortado())
+                    {
+                        MessageBox.Show("El mensaje contiene un enlace acortado, se recomienda evitar o revisar detenidamente su confiabilidad.");
+                    }
                     listBoxEnviados1.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                     txtBoxRemitente1.Clear();
                     txtBoxDestinatario1.Clear();
                     txtBoxAsunto1.Clear();
                     txtBoxMensaje1.Clear();
                     listBoxRecibidos2.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
-                } 
+                }
             }
             
             bool comprobarSpam()
@@ -74,6 +84,18 @@ namespace demoCorreo
                 foreach (string palabra in palabrasSpam)
                 {
                     if (mensaje.ToLower().Contains(palabra.ToLower()))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            bool comprobarEnlaceCortado()
+            {
+                foreach (string enlace in enlacesCortos)
+                {
+                    if (mensaje.ToLower().Contains(enlace.ToLower()))
                     {
                         return true;
                     }
