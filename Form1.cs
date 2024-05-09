@@ -40,7 +40,7 @@ namespace demoCorreo
             string asunto = txtBoxAsunto1.Text;
             string mensaje = txtBoxMensaje1.Text;
             string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
-            string[] enlacesCortos = {"bit.ly","tiny.url","ow.ly","goo.gl"};
+            string[] enlacesCortos = {"bit.ly","tiny.url","ow.ly","goo.gl","http"};
 
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
@@ -56,7 +56,7 @@ namespace demoCorreo
                 {
                     if (comprobarEnlaceCortado())
                     {
-                        MessageBox.Show("El mensaje contiene un enlace acortado, se recomienda evitar o revisar detenidamente su confiabilidad.");
+                        MessageBox.Show("El mensaje contiene un enlace acortado o poco seguro, se recomienda evitar o revisar detenidamente su confiabilidad.");
                     }
                     listBoxSPAM2.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                     txtBoxRemitente1.Clear();
@@ -68,7 +68,7 @@ namespace demoCorreo
                 {
                     if (comprobarEnlaceCortado())
                     {
-                        MessageBox.Show("El mensaje contiene un enlace acortado, se recomienda evitar o revisar detenidamente su confiabilidad.");
+                        MessageBox.Show("El mensaje contiene un enlace acortado o poco seguro, se recomienda evitar o revisar detenidamente su confiabilidad.");
                     }
                     listBoxEnviados1.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                     txtBoxRemitente1.Clear();
