@@ -37,22 +37,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnEnviar1 = new System.Windows.Forms.Button();
-            this.btnActualizar1 = new System.Windows.Forms.Button();
             this.listBoxEnviados1 = new System.Windows.Forms.ListBox();
             this.listBoxRecibidos1 = new System.Windows.Forms.ListBox();
             this.listBoxSPAM1 = new System.Windows.Forms.ListBox();
-            this.txtBoxMensaje1 = new System.Windows.Forms.TextBox();
             this.txtBoxAsunto1 = new System.Windows.Forms.TextBox();
             this.txtBoxDestinatario1 = new System.Windows.Forms.TextBox();
             this.txtBoxRemitente1 = new System.Windows.Forms.TextBox();
             this.txtBoxRemitente2 = new System.Windows.Forms.TextBox();
             this.txtBoxDestinatario2 = new System.Windows.Forms.TextBox();
             this.txtBoxAsunto2 = new System.Windows.Forms.TextBox();
-            this.txtBoxMensaje2 = new System.Windows.Forms.TextBox();
             this.listBoxSPAM2 = new System.Windows.Forms.ListBox();
             this.listBoxRecibidos2 = new System.Windows.Forms.ListBox();
             this.listBoxEnviados2 = new System.Windows.Forms.ListBox();
-            this.btnActualizar2 = new System.Windows.Forms.Button();
             this.btnEnviar2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,6 +59,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.richTxtBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -156,15 +154,6 @@
             this.btnEnviar1.UseVisualStyleBackColor = true;
             this.btnEnviar1.Click += new System.EventHandler(this.btnEnviar1_Click);
             // 
-            // btnActualizar1
-            // 
-            this.btnActualizar1.Location = new System.Drawing.Point(491, 161);
-            this.btnActualizar1.Name = "btnActualizar1";
-            this.btnActualizar1.Size = new System.Drawing.Size(118, 28);
-            this.btnActualizar1.TabIndex = 9;
-            this.btnActualizar1.Text = "Actualizar";
-            this.btnActualizar1.UseVisualStyleBackColor = true;
-            // 
             // listBoxEnviados1
             // 
             this.listBoxEnviados1.FormattingEnabled = true;
@@ -191,13 +180,6 @@
             this.listBoxSPAM1.Name = "listBoxSPAM1";
             this.listBoxSPAM1.Size = new System.Drawing.Size(601, 58);
             this.listBoxSPAM1.TabIndex = 12;
-            // 
-            // txtBoxMensaje1
-            // 
-            this.txtBoxMensaje1.Location = new System.Drawing.Point(163, 190);
-            this.txtBoxMensaje1.Name = "txtBoxMensaje1";
-            this.txtBoxMensaje1.Size = new System.Drawing.Size(275, 26);
-            this.txtBoxMensaje1.TabIndex = 13;
             // 
             // txtBoxAsunto1
             // 
@@ -242,18 +224,11 @@
             this.txtBoxAsunto2.Size = new System.Drawing.Size(275, 26);
             this.txtBoxAsunto2.TabIndex = 30;
             // 
-            // txtBoxMensaje2
-            // 
-            this.txtBoxMensaje2.Location = new System.Drawing.Point(847, 193);
-            this.txtBoxMensaje2.Name = "txtBoxMensaje2";
-            this.txtBoxMensaje2.Size = new System.Drawing.Size(275, 26);
-            this.txtBoxMensaje2.TabIndex = 29;
-            // 
             // listBoxSPAM2
             // 
             this.listBoxSPAM2.FormattingEnabled = true;
             this.listBoxSPAM2.ItemHeight = 18;
-            this.listBoxSPAM2.Location = new System.Drawing.Point(688, 483);
+            this.listBoxSPAM2.Location = new System.Drawing.Point(700, 480);
             this.listBoxSPAM2.Name = "listBoxSPAM2";
             this.listBoxSPAM2.Size = new System.Drawing.Size(601, 58);
             this.listBoxSPAM2.TabIndex = 28;
@@ -262,7 +237,7 @@
             // 
             this.listBoxRecibidos2.FormattingEnabled = true;
             this.listBoxRecibidos2.ItemHeight = 18;
-            this.listBoxRecibidos2.Location = new System.Drawing.Point(688, 383);
+            this.listBoxRecibidos2.Location = new System.Drawing.Point(700, 380);
             this.listBoxRecibidos2.Name = "listBoxRecibidos2";
             this.listBoxRecibidos2.Size = new System.Drawing.Size(601, 58);
             this.listBoxRecibidos2.TabIndex = 27;
@@ -271,19 +246,10 @@
             // 
             this.listBoxEnviados2.FormattingEnabled = true;
             this.listBoxEnviados2.ItemHeight = 18;
-            this.listBoxEnviados2.Location = new System.Drawing.Point(688, 292);
+            this.listBoxEnviados2.Location = new System.Drawing.Point(700, 289);
             this.listBoxEnviados2.Name = "listBoxEnviados2";
             this.listBoxEnviados2.Size = new System.Drawing.Size(601, 58);
             this.listBoxEnviados2.TabIndex = 26;
-            // 
-            // btnActualizar2
-            // 
-            this.btnActualizar2.Location = new System.Drawing.Point(1156, 186);
-            this.btnActualizar2.Name = "btnActualizar2";
-            this.btnActualizar2.Size = new System.Drawing.Size(118, 28);
-            this.btnActualizar2.TabIndex = 25;
-            this.btnActualizar2.Text = "Actualizar";
-            this.btnActualizar2.UseVisualStyleBackColor = true;
             // 
             // btnEnviar2
             // 
@@ -299,7 +265,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(684, 462);
+            this.label9.Location = new System.Drawing.Point(696, 459);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 18);
             this.label9.TabIndex = 23;
@@ -309,7 +275,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(685, 361);
+            this.label10.Location = new System.Drawing.Point(697, 358);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 18);
             this.label10.TabIndex = 22;
@@ -319,7 +285,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(684, 272);
+            this.label11.Location = new System.Drawing.Point(696, 269);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(154, 18);
             this.label11.TabIndex = 21;
@@ -385,21 +351,37 @@
             this.label17.TabIndex = 34;
             this.label17.Text = "Usuario 2";
             // 
+            // richTxtBox2
+            // 
+            this.richTxtBox2.Location = new System.Drawing.Point(847, 196);
+            this.richTxtBox2.Name = "richTxtBox2";
+            this.richTxtBox2.Size = new System.Drawing.Size(412, 70);
+            this.richTxtBox2.TabIndex = 35;
+            this.richTxtBox2.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(162, 196);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(412, 70);
+            this.richTextBox1.TabIndex = 36;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1433, 590);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTxtBox2);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtBoxRemitente2);
             this.Controls.Add(this.txtBoxDestinatario2);
             this.Controls.Add(this.txtBoxAsunto2);
-            this.Controls.Add(this.txtBoxMensaje2);
             this.Controls.Add(this.listBoxSPAM2);
             this.Controls.Add(this.listBoxRecibidos2);
             this.Controls.Add(this.listBoxEnviados2);
-            this.Controls.Add(this.btnActualizar2);
             this.Controls.Add(this.btnEnviar2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -411,11 +393,9 @@
             this.Controls.Add(this.txtBoxRemitente1);
             this.Controls.Add(this.txtBoxDestinatario1);
             this.Controls.Add(this.txtBoxAsunto1);
-            this.Controls.Add(this.txtBoxMensaje1);
             this.Controls.Add(this.listBoxSPAM1);
             this.Controls.Add(this.listBoxRecibidos1);
             this.Controls.Add(this.listBoxEnviados1);
-            this.Controls.Add(this.btnActualizar1);
             this.Controls.Add(this.btnEnviar1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -444,22 +424,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEnviar1;
-        private System.Windows.Forms.Button btnActualizar1;
         private System.Windows.Forms.ListBox listBoxEnviados1;
         private System.Windows.Forms.ListBox listBoxRecibidos1;
         private System.Windows.Forms.ListBox listBoxSPAM1;
-        private System.Windows.Forms.TextBox txtBoxMensaje1;
         private System.Windows.Forms.TextBox txtBoxAsunto1;
         private System.Windows.Forms.TextBox txtBoxDestinatario1;
         private System.Windows.Forms.TextBox txtBoxRemitente1;
         private System.Windows.Forms.TextBox txtBoxRemitente2;
         private System.Windows.Forms.TextBox txtBoxDestinatario2;
         private System.Windows.Forms.TextBox txtBoxAsunto2;
-        private System.Windows.Forms.TextBox txtBoxMensaje2;
         private System.Windows.Forms.ListBox listBoxSPAM2;
         private System.Windows.Forms.ListBox listBoxRecibidos2;
         private System.Windows.Forms.ListBox listBoxEnviados2;
-        private System.Windows.Forms.Button btnActualizar2;
         private System.Windows.Forms.Button btnEnviar2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -470,6 +446,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.RichTextBox richTxtBox2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

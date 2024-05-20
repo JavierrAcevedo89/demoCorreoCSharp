@@ -38,17 +38,13 @@ namespace demoCorreo
             string remitente = txtBoxRemitente1.Text;
             string destinatario = txtBoxDestinatario1.Text;
             string asunto = txtBoxAsunto1.Text;
-            string mensaje = txtBoxMensaje1.Text;
+            string mensaje = richTextBox1.Text;
             string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
             string[] enlacesCortos = {"bit.ly","tiny.url","ow.ly","goo.gl","http"};
 
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show("Por favor ingrese los datos completos.");
-                txtBoxRemitente1.Clear();
-                txtBoxDestinatario1.Clear();
-                txtBoxAsunto1.Clear();
-                txtBoxMensaje1.Clear();
             }
             else
             {
@@ -62,7 +58,7 @@ namespace demoCorreo
                     txtBoxRemitente1.Clear();
                     txtBoxDestinatario1.Clear();
                     txtBoxAsunto1.Clear();
-                    txtBoxMensaje1.Clear();
+                    richTextBox1.Clear();
                     listBoxEnviados1.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                 } else
                 {
@@ -74,7 +70,7 @@ namespace demoCorreo
                     txtBoxRemitente1.Clear();
                     txtBoxDestinatario1.Clear();
                     txtBoxAsunto1.Clear();
-                    txtBoxMensaje1.Clear();
+                    richTextBox1.Clear();
                     listBoxRecibidos2.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                 }
             }
@@ -110,15 +106,11 @@ namespace demoCorreo
             string remitente = txtBoxRemitente2.Text;
             string destinatario = txtBoxDestinatario2.Text;
             string asunto = txtBoxAsunto2.Text;
-            string mensaje = txtBoxMensaje2.Text;
+            string mensaje = richTxtBox2.Text;
             string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show("Por favor ingrese los datos completos.");
-                txtBoxRemitente2.Clear();
-                txtBoxDestinatario2.Clear();
-                txtBoxAsunto2.Clear();
-                txtBoxMensaje2.Clear();
             }
             else
             {
@@ -128,7 +120,7 @@ namespace demoCorreo
                     txtBoxRemitente2.Clear();
                     txtBoxDestinatario2.Clear();
                     txtBoxAsunto2.Clear();
-                    txtBoxMensaje2.Clear();
+                    richTxtBox2.Clear();
                 }
                 else
                 {
@@ -136,7 +128,7 @@ namespace demoCorreo
                     txtBoxRemitente2.Clear();
                     txtBoxDestinatario2.Clear();
                     txtBoxAsunto2.Clear();
-                    txtBoxMensaje2.Clear();
+                    richTxtBox2.Clear();
                     listBoxRecibidos1.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                 }
             }
