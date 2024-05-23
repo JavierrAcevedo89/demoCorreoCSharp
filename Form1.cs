@@ -31,7 +31,6 @@ namespace demoCorreo
 
         }
 
-
         //Evento click del botón 1 que envía el correo al usuario 2
         private void btnEnviar1_Click(object sender, EventArgs e)
         {
@@ -40,11 +39,19 @@ namespace demoCorreo
             string asunto = txtBoxAsunto1.Text;
             string mensaje = richTextBox1.Text;
             string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
-            string[] enlacesCortos = {"bit.ly","tiny.url","ow.ly","goo.gl","http"};
+            string[] enlacesCortos = { "bit.ly", "tiny.url", "ow.ly", "goo.gl", "http" };
 
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show("Por favor ingrese los datos completos.");
+            }
+            else if (!remitente.Contains("@") || !destinatario.Contains("@"))
+            {
+                MessageBox.Show("El correo ingresado no contiene el '@'.");
+            }
+            else if (!comprobarCorreoElectronico(remitente) || !comprobarCorreoElectronico(destinatario))
+            {
+                MessageBox.Show("Por favor ingrese correos electrónicos válidos (yahoo, gmail, outlook, yimeil).");
             }
             else
             {
@@ -60,7 +67,8 @@ namespace demoCorreo
                     txtBoxAsunto1.Clear();
                     richTextBox1.Clear();
                     listBoxEnviados1.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
-                } else
+                }
+                else
                 {
                     if (comprobarEnlaceCortado())
                     {
@@ -74,7 +82,7 @@ namespace demoCorreo
                     listBoxRecibidos2.Items.Add(remitente + "," + destinatario + "," + asunto + "," + mensaje);
                 }
             }
-            
+
             bool comprobarSpam()
             {
                 foreach (string palabra in palabrasSpam)
@@ -98,6 +106,20 @@ namespace demoCorreo
                 }
                 return false;
             }
+
+            bool comprobarCorreoElectronico(string correo)
+            {
+                string[] dominiosValidos = { "yahoo.com", "gmail.com", "outlook.com", "yimeil.com" };
+                if (correo.Contains("@"))
+                {
+                    string dominio = correo.Split('@').Last();
+                    if (dominiosValidos.Contains(dominio))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
 
         //Evento click del botón 2 que envía el correo al usuario 1
@@ -108,9 +130,18 @@ namespace demoCorreo
             string asunto = txtBoxAsunto2.Text;
             string mensaje = richTxtBox2.Text;
             string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
+
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
                 MessageBox.Show("Por favor ingrese los datos completos.");
+            }
+            else if (!remitente.Contains("@") || !destinatario.Contains("@"))
+            {
+                MessageBox.Show("El correo ingresado no contiene el '@'.");
+            }
+            else if (!comprobarCorreoElectronico(remitente) || !comprobarCorreoElectronico(destinatario))
+            {
+                MessageBox.Show("Por favor ingrese correos electrónicos válidos (yahoo, gmail, outlook, yimeil).");
             }
             else
             {
@@ -138,6 +169,20 @@ namespace demoCorreo
                 foreach (string palabra in palabrasSpam)
                 {
                     if (mensaje.ToLower().Contains(palabra.ToLower()))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            bool comprobarCorreoElectronico(string correo)
+            {
+                string[] dominiosValidos = { "yahoo.com", "gmail.com", "outlook.com", "yimeil.com" };
+                if (correo.Contains("@"))
+                {
+                    string dominio = correo.Split('@').Last();
+                    if (dominiosValidos.Contains(dominio))
                     {
                         return true;
                     }
