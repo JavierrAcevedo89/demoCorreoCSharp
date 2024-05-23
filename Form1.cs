@@ -39,8 +39,9 @@ namespace demoCorreo
             string destinatario = txtBoxDestinatario1.Text;
             string asunto = txtBoxAsunto1.Text;
             string mensaje = richTextBox1.Text;
-            string[] palabrasSpam = { "Gratis", "Oferta", "Promoción" };
+            string[] palabrasSpam = { "Gratis", "Oferta", "Promoción","Promocion" };
             string[] enlacesCortos = {"bit.ly","tiny.url","ow.ly","goo.gl","http"};
+            string[] dominiosValidos = {"@yahoo.com","@gmail.com","@hotmail.com","@outlook.com" };
 
             if (string.IsNullOrEmpty(remitente) || string.IsNullOrEmpty(destinatario) || string.IsNullOrEmpty(asunto) || string.IsNullOrEmpty(mensaje))
             {
@@ -144,6 +145,8 @@ namespace demoCorreo
                 }
                 return false;
             }
+
+            //Comentario para ver commit en VSC
         }
     }
 }
